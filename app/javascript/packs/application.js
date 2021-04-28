@@ -16,3 +16,14 @@ require("channels")
 // const images = require.context('../images', true)
 // const imagePath = (name) => images(name, true)
 import 'bootstrap';
+//= require select2
+// import {searchLogic} from '../components/search'
+
+// document.addEventListener('turbolinks:load',()=>{
+//   searchLogic();
+// })
+import { loadDynamicBannerText } from '../components/typed';
+
+document.addEventListener('turbolinks:load', () => {
+  loadDynamicBannerText();
+});

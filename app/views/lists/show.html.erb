@@ -1,0 +1,36 @@
+<div class="banner" style='background-image: url("https://source.unsplash.com/atsUqIm3wxo/1600x900"); object-fit: cover;'>
+</div>
+<div class="container">
+  <div class="row">
+  <div class="col-12 text-center">
+    <h1 class="text-dark"><%= @list.name %></h1>
+    <div class='p-1 d-flex justify-content-end'>
+      <%= link_to "Add more movies", new_list_bookmark_path(@list), class:'btn btn-success btn-sm' %>
+    </div>
+  </div>
+  <div class="row">
+      <% @list.bookmarks.each do |bookmark| %>
+        <% movie = Movie.find(bookmark.movie_id) %>
+        <div class="card-deck col-6 mt-3 mb-5">
+          <div class="card card-border card-shadow">
+            <%= image_tag "#{movie.poster_url}", class: 'card-img-top card-img-border card-shadow card-img' %>
+            <div class="card-body">
+              <h2 class="card-title text-center"> <%= movie.title %> </h2>
+              <p class="card-text"> <%= movie.overview %></p>
+            </div>
+            <div class="card-footer d-flex justify-content-between">
+              <small class='d-flex'>
+                <i class="fas fa-quote-left mr-2"></i>
+                <p> <%= bookmark.comment %></p>
+              </small>
+              <div class="d-flex justify-content-end">
+              <small class='text-success'> Rating: <%= movie.rating %> </small>
+              <small> <%= link_to("Delete", list_bookmark_path(bookmark), method:'delete',class: 'text-danger ml-2') %> </small>
+              </div>
+            </div>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>

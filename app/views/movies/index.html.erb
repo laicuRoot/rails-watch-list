@@ -1,0 +1,18 @@
+<div class="container">
+  <div class="row">
+    <% @movie.each do |movie| %>
+      <div class="card-deck col-6 mt-3">
+        <div class="card card-border card-shadow">
+          <%= image_tag "#{movie.poster_url}", class: 'card-img-top card-img-border card-shadow card-img' %>
+          <div class="card-body">
+            <h4 class="card-title text-center"> <%= movie.title %> </h4>
+            <p class="card-text"> <%= movie.overview %> </p>
+          </div>
+          <div class="card-footer">
+            <small class='text-success'> Rating: <%= movie.rating %> </small>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>

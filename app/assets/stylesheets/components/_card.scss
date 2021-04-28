@@ -1,0 +1,17 @@
+.card-border {
+  border-radius: 8px;
+}
+
+.card-img-border {
+  border-top-right-radius: 8px;
+  border-top-left-radius: 8px;
+}
+
+.card-shadow {
+  box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.5)
+}
+
+.card-img {
+  height: 350px;
+  object-fit: cover;
+}
