@@ -1,0 +1,10 @@
+<div class="container">
+  <div class="row">
+    <div class="col-sm-12">
+      <%= simple_form_for [@movie, @review] do |f| %>
+        <%= f.input :comment %>
+        <%= f.button :submit, class:'btn btn-outline-success' %>
+      <% end %>
+    </div>
+  </div>
+</div>
