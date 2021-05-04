@@ -2,16 +2,16 @@
 </div>
 <div class="container">
   <div class="row">
-  <div class="col-12 text-center">
-    <h1 class="text-dark"><%= @list.name %></h1>
+  <div class="col-12 text-center mt-2 ">
+    <h1 class="text-dark text-uppercase"><%= @list.name %></h1>
     <div class='p-1 d-flex justify-content-end'>
       <%= link_to "Add more movies", new_list_bookmark_path(@list), class:'btn btn-success btn-sm' %>
     </div>
   </div>
-  <div class="row">
+  <div class="row mt-5">
       <% @list.bookmarks.each do |bookmark| %>
         <% movie = Movie.find(bookmark.movie_id) %>
-        <div class="card-deck col-6 mt-3 mb-5">
+        <div class="card-deck col-12 col-md-6 mt-3 mb-5">
           <div class="card card-border card-shadow">
             <%= image_tag "#{movie.poster_url}", class: 'card-img-top card-img-border card-shadow card-img' %>
             <div class="card-body">
@@ -34,14 +34,14 @@
     </div>
   </div>
   <div class="row d-flex mb-5 align-items-center justify-content-center">
-    <div class="col-sm-12 col-md-4 mt-3">
+    <div class="col-12 col-md-4 mt-3">
       <%= simple_form_for([@list, @list_review]) do |f| %>
         <%= f.input :comments %>
         <%= f.input :rating %>
         <%= f.submit 'Submit review', class:'btn btn-success btn-sm' %>
       <% end %>
     </div>
-    <div class="col-sm-12 col-md-8">
+    <div class="col-12 col-md-8">
       <ul class='list-group'></ul>
       <% @list.list_reviews.each do |review| %>
           <li class='list-group-item'><%= review.comments %></li>

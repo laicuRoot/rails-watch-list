@@ -4,7 +4,7 @@
       <%= simple_form_for [@list, @bookmark] do |f| %>
         <%= f.association :movie %>
         <%= f.input :comment %>
-        <%= f.button :submit %>
+        <%= f.button :submit, class: 'btn btn-outline-success' %>
       <% end %>
     </div>
   </div>
