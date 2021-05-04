@@ -1,6 +1,11 @@
 <div class="container">
-  <div class="row">
-    <div class="col-sm-12">
+  <div class="row mt-5">
+    <div class="col-12 text-center text-secondary">
+      <h1>Add a movie to the list:</h1>
+    </div>
+  </div>
+  <div class="row mt-2 min-vh-100">
+    <div class="col-12">
       <%= simple_form_for [@list, @bookmark] do |f| %>
         <%= f.association :movie %>
         <%= f.input :comment %>
