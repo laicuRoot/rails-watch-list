@@ -12,14 +12,17 @@
 
 </div>
 
-# Movie list web app
+# Movie list Web App
 
 > Ruby on Rails web app to create your own movie lists
+> https://moviemaniawagon.herokuapp.com/
 
-## API's and components 
+## Stack
 
-In this project we have 1 API to retrieve the movies: 
-
- - https://www.themoviedb.org/
+ - Ruby on Rails
+ - PostgreSQL
+ - Javascript
+ - API -> https://www.themoviedb.org/
+ - Deployed in Heroku
  
 Project created by **LaicuRoot**.
