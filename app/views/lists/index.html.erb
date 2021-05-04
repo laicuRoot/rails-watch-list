@@ -16,7 +16,7 @@
     <% @list.each do |list| %>
       <div class="card-deck col-6 mt-3">
         <div class="card card-border card-shadow">
-          <%= image_tag "#{list.imgsrc}", class: 'card-img-top card-img-border card-shadow' %>
+          <%= cl_image_tag list.picture.key,height:300, width: 400, crop: :fill,class: 'card-img-top card-img-border card-shadow' %>
           <div class="card-body">
             <h2 class="card-title text-center"> <%= link_to "#{list.name}", list_path(list), class: 'text-dark' %> </h2>
           </div>
@@ -26,15 +26,5 @@
         </div>
       </div>
     <% end %>
-  </div>
-  <div class="row mt-5">
-    <h1>Movies:</h1>
-    <div class="col-12">
-      <ul class="list-group">
-        <% @movies.each do |movie| %>
-          <li class="list-group-item"><%= movie.title %></li>
-        <%end %>
-      </ul>
-    </div>
   </div>
 </div>
