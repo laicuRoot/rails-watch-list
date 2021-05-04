@@ -33,6 +33,11 @@
       <% end %>
     </div>
   </div>
+  <div class="row mb-3 text-center text-secondary">
+    <div class="col-12 text-center">
+      <h2>Review this list</h2>
+    </div>
+  </div>
   <div class="row d-flex mb-5 align-items-center justify-content-center">
     <div class="col-12 col-md-4 mt-3">
       <%= simple_form_for([@list, @list_review]) do |f| %>
@@ -42,10 +47,11 @@
       <% end %>
     </div>
     <div class="col-12 col-md-8">
-      <ul class='list-group'></ul>
+      <ul class='list-group'>
       <% @list.list_reviews.each do |review| %>
-          <li class='list-group-item'><%= review.comments %></li>
+        <li class='list-group-item'><%= review.comments %></li>
       <% end %>
+      </ul>
     </div>
   </div>
 </div>

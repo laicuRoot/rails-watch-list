@@ -20,7 +20,8 @@
           <div class="card-body">
             <h2 class="card-title text-center"> <%= link_to "#{list.name}", list_path(list), class: 'text-dark' %> </h2>
           </div>
-          <div class="card-footer">
+          <div class="card-footer d-flex justify-content-between">
+            <small> <%= link_to 'Delete list', list_path(list), method: :delete, class: 'text-warning', data: {confirm: 'Do you want to delete this list?'} %> </small>
             <small> <%= link_to 'Add bookmark', new_list_bookmark_path(list), class: 'text-dark' %> </small>
           </div>
         </div>
