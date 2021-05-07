@@ -25,7 +25,7 @@
               </small>
               <div class="d-flex justify-content-end">
               <small class='text-success'> Rating: <%= movie.rating %> </small>
-              <small> <%= link_to("Delete", list_bookmark_path(bookmark), method:'delete',class: 'text-danger ml-2') %> </small>
+              <small> <%= link_to "Delete", list_bookmark_path(bookmark.list_id, bookmark), method:'delete',class: 'text-danger ml-2' %> </small>
               </div>
             </div>
           </div>

@@ -23,6 +23,10 @@ import 'bootstrap';
 //   searchLogic();
 // })
 import { loadDynamicBannerText } from '../components/typed';
+import { searchLogic } from '../components/search';
+
+const form = document.getElementById('apimovies')
+const input = document.getElementById('apisearch').value
 
 document.addEventListener('turbolinks:load', () => {
   loadDynamicBannerText();

@@ -12,7 +12,7 @@ require 'json'
 x = 1
 results = []
 
-while x < 10
+while x < 5
   url = "http://tmdb.lewagon.com/movie/top_rated?&language=en-US&page=#{x += 1}"
   url_string = open(url).read
   movies = JSON.parse(url_string)

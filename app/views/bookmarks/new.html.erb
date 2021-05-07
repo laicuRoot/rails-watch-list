@@ -6,7 +6,7 @@
   </div>
   <div class="row mt-2 min-vh-100">
     <div class="col-12">
-      <%= simple_form_for [@list, @bookmark] do |f| %>
+      <%= simple_form_for [@list,@bookmark] do |f| %>
         <%= f.association :movie %>
         <%= f.input :comment %>
         <%= f.button :submit, class: 'btn btn-outline-success' %>
