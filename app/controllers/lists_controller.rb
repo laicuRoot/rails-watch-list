@@ -1,6 +1,7 @@
 class ListsController < ApplicationController
   def index
-    @list = List.all
+    @list = current_user.lists
+    # raise
     @movies = Movie.all
   end
 
@@ -14,7 +15,8 @@ class ListsController < ApplicationController
   end
 
   def create
-    @list = List.new(list_params)
+    @list = current_user.lists.new(list_params)
+    @list.user_id = current_user.id
     if @list.save
       redirect_to list_path(@list)
     else

@@ -5,14 +5,14 @@
     </div>
   </div>
 </div>
-<div class="container">
+<div class="container min-vh-100">
   <div class="row">
     <div class="col-12 d-flex justify-content-between align-content-center p-2">
       <h2>My lists:</h2>
       <small><%= link_to("New List", new_list_path , class: 'btn btn-success btn-sm text-light') %></small>
     </div>
   </div>
-  <div class="row">
+  <div class="row mt-3">
     <% @list.each do |list| %>
       <div class="card-deck col-12 col-md-6 mt-3">
         <div class="card card-border card-shadow">
