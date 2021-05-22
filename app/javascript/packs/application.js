@@ -17,17 +17,13 @@ require("channels")
 // const imagePath = (name) => images(name, true)
 import 'bootstrap';
 //= require select2
-// import {searchLogic} from '../components/search'
 
-// document.addEventListener('turbolinks:load',()=>{
-//   searchLogic();
-// })
 import { loadDynamicBannerText } from '../components/typed';
-import { searchLogic } from '../components/search';
-
-const form = document.getElementById('apimovies')
-const input = document.getElementById('apisearch').value
+// import { search } from '../components/search';
 
 document.addEventListener('turbolinks:load', () => {
   loadDynamicBannerText();
+  // search();
 });
+
+import "controllers"

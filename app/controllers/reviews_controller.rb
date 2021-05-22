@@ -8,9 +8,11 @@ class ReviewsController < ApplicationController
     @movie = Movie.find(params[:movie_id])
     @review = Review.new(review_params)
     @review.movie = @movie
-    @review.save
-
-    redirect_to root_path
+    if @review.save
+      redirect_to root_path
+    else
+      render :new
+    end
   end
 
   private

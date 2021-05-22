@@ -14,7 +14,7 @@
         <div class="card-deck col-12 col-md-6 mt-3 mb-5">
           <div class="card card-border card-shadow">
             <%= image_tag "#{movie.poster_url}", class: 'card-img-top card-img-border card-shadow card-img' %>
-            <div class="card-body">
+            <div class="card-body" id="bookmark-<%= bookmark.id %>">
               <h2 class="card-title text-center"> <%= movie.title %> </h2>
               <p class="card-text"> <%= movie.overview %></p>
             </div>
@@ -25,7 +25,7 @@
               </small>
               <div class="d-flex justify-content-end">
               <small class='text-success'> Rating: <%= movie.rating %> </small>
-              <small> <%= link_to "Delete", list_bookmark_path(bookmark.list_id, bookmark), method:'delete',class: 'text-danger ml-2' %> </small>
+              <small> <%= link_to "Delete", list_bookmark_path(bookmark.list_id, bookmark), remote: true,  method:'delete',class: 'text-danger ml-2' %> </small>
               </div>
             </div>
           </div>
@@ -40,7 +40,7 @@
   </div>
   <div class="row d-flex mb-5 align-items-center justify-content-center">
     <div class="col-12 col-md-4 mt-3">
-      <%= simple_form_for([@list, @list_review]) do |f| %>
+      <%= simple_form_for([@list, @list_review], remote: true) do |f| %>
         <%= f.input :comments %>
         <%= f.input :rating %>
         <%= f.submit 'Submit review', class:'btn btn-success btn-sm' %>
@@ -49,7 +49,7 @@
     <div class="col-12 col-md-8">
       <ul class='list-group'>
       <% @list.list_reviews.each do |review| %>
-        <li class='list-group-item'><%= review.comments %></li>
+        <li id="review-<%= review.id %>" class='list-group-item'><%= review.comments %></li>
       <% end %>
       </ul>
     </div>

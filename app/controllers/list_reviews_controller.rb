@@ -9,8 +9,11 @@ class ListReviewsController < ApplicationController
     @list_review = ListReview.new(list_review_params)
     @list = List.find(params[:list_id])
     @list_review.list = @list
-    @list_review.save
-    redirect_to list_path(@list)
+    if @list_review.save
+      redirect_to list_path(@list, anchor: "review-#{@list_review.id}")
+    else
+      redirect_to list_path(@list)
+    end
   end
 
   private

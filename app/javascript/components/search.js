@@ -1,20 +1,27 @@
-const searchLogic = () => {
 
+const search = () => {
+  const form = document.getElementById('search-movies');
+  const results = document.getElementById('results')
   const searchMovies = (query) => {
-  fetch(`http://tmdb.lewagon.com/search/movie?language=en-US&query=${query}&page=1&include_adult=false`)
-    .then(response => response.json())
-    .then(data => {
-      console.log(data)
-    })
+    fetch(`https://www.omdbapi.com/?s=${query}&apikey=365f2501`)
+      .then(response => response.json())
+      .then((data)=> {
+        data.Search.forEach((movie) => {
+          const result = `<li class='list-inline-item'>
+          <img src="${movie.Poster}" alt="">
+          <p>${movie.Title}</p>
+          </li>`;
+          results.insertAdjacentHTML("beforeend", result);
+        })
+      })
   }
-
-  const form = document.getElementById('searchmovies')
-
-  form.addEventListener('submit', (event)=>{
+  form.addEventListener('submit', (event) => {
     event.preventDefault();
-    const input = document.getElementById('search').value
-    searchMovies(input)
+    const input = event.currentTarget.querySelector('.form-control').value;
+    results.innerHTML = "";
+    searchMovies(input);
   })
 }
 
-export { searchLogic };
+
+export { search }
